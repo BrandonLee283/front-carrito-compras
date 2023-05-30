@@ -34,35 +34,46 @@ import camara5 from '../Assets/camara5.png';
 const categorias = ['Telefonia','Portatiles','Pantallas','Audifonos','Camaras']
 
 const productosData = [];
-productosData.push({ID: 0, nombre: 'Samsung S21 Ultra', precio: 26999, img: celular1, categoria: categorias[0] });
-productosData.push({ID: 1, nombre: 'Pixel 6 Pro', precio: 18999, img: celular2, categoria: categorias[0] });
-productosData.push({ID: 2, nombre: 'OnePlus 9 Pro', precio: 21999, img: celular3, categoria: categorias[0] });
-productosData.push({ID: 3, nombre: 'Xiaomi Mi 11', precio: 26999, img: celular4, categoria: categorias[0] });
-productosData.push({ID: 4, nombre: 'iPhone 13 Pro', precio: 24299, img: celular5, categoria: categorias[0] });
+productosData.push({ID: 0, nombre: 'Samsung S21 Ultra', precio: 26999, img: 'celular1', categoria: categorias[0] });
+productosData.push({ID: 1, nombre: 'Pixel 6 Pro', precio: 18999, img: 'celular2', categoria: categorias[0] });
+productosData.push({ID: 2, nombre: 'OnePlus 9 Pro', precio: 21999, img: 'celular3', categoria: categorias[0] });
+productosData.push({ID: 3, nombre: 'Xiaomi Mi 11', precio: 26999, img: 'celular4', categoria: categorias[0] });
+productosData.push({ID: 4, nombre: 'iPhone 13 Pro', precio: 24299, img: 'celular5', categoria: categorias[0] });
 
-productosData.push({ID: 5, nombre: 'MacBook Pro', precio: 27999, img: laptop1, categoria: categorias[1] });
-productosData.push({ID: 6, nombre: 'Dell XPS 15', precio: 26999, img: laptop2, categoria: categorias[1] });
-productosData.push({ID: 7, nombre: 'HP Spectre x360', precio: 23999, img: laptop3, categoria: categorias[1] });
-productosData.push({ID: 8, nombre: 'Lenovo ThinkPad', precio: 27999, img: laptop4, categoria: categorias[1] });
-productosData.push({ID: 9, nombre: 'Asus ROG Zephyrus G14 ', precio: 26999, img: laptop5, categoria: categorias[1] });
+productosData.push({ID: 5, nombre: 'MacBook Pro', precio: 27999, img: 'laptop1', categoria: categorias[1] });
+productosData.push({ID: 6, nombre: 'Dell XPS 15', precio: 26999, img: 'laptop2', categoria: categorias[1] });
+productosData.push({ID: 7, nombre: 'HP Spectre x360', precio: 23999, img: 'laptop3', categoria: categorias[1] });
+productosData.push({ID: 8, nombre: 'Lenovo ThinkPad', precio: 27999, img: 'laptop4', categoria: categorias[1] });
+productosData.push({ID: 9, nombre: 'Asus ROG Zephyrus G14 ', precio: 26999, img: 'laptop5', categoria: categorias[1] });
 
-productosData.push({ID: 10, nombre: 'LG OLED C1', precio: 34999, img: tv1, categoria: categorias[2] });
-productosData.push({ID: 11, nombre: 'Samsung QLED', precio: 29999, img: tv2, categoria: categorias[2] });
-productosData.push({ID: 12, nombre: 'Sony BRAVIA XR', precio: 49999, img: tv3, categoria: categorias[2] });
-productosData.push({ID: 13, nombre: 'TCL 6-Series', precio: 13999, img: tv4, categoria: categorias[2] });
-productosData.push({ID: 14, nombre: 'Vizio OLED 4K TV', precio: 34999, img: tv5, categoria: categorias[2] });
+productosData.push({ID: 10, nombre: 'LG OLED C1', precio: 34999, img: 'tv1', categoria: categorias[2] });
+productosData.push({ID: 11, nombre: 'Samsung QLED', precio: 29999, img: 'tv2', categoria: categorias[2] });
+productosData.push({ID: 12, nombre: 'Sony BRAVIA XR', precio: 49999, img: 'tv3', categoria: categorias[2] });
+productosData.push({ID: 13, nombre: 'TCL 6-Series', precio: 13999, img: 'tv4', categoria: categorias[2] });
+productosData.push({ID: 14, nombre: 'Vizio OLED 4K TV', precio: 34999, img: 'tv5', categoria: categorias[2] });
 
-productosData.push({ID: 15, nombre: 'Apple AirPods Pro', precio: 5499, img: audifonos1, categoria: categorias[3] });
-productosData.push({ID: 16, nombre: 'Sony WH', precio: 5999, img: audifonos2, categoria: categorias[3] });
-productosData.push({ID: 17, nombre: 'Bose QuietComfort', precio: 5999, img: audifonos3, categoria: categorias[3] });
-productosData.push({ID: 18, nombre: 'Jabra Elite 85t', precio: 3999, img: audifonos4, categoria: categorias[3] });
-productosData.push({ID: 19, nombre: 'Sennheiser Momentum True 2', precio: 4999, img: audifonos5, categoria: categorias[3] });
+productosData.push({ID: 15, nombre: 'Apple AirPods Pro', precio: 5499, img: 'audifonos1', categoria: categorias[3] });
+productosData.push({ID: 16, nombre: 'Sony WH', precio: 5999, img: 'audifonos2', categoria: categorias[3] });
+productosData.push({ID: 17, nombre: 'Bose QuietComfort', precio: 5999, img: 'audifonos3', categoria: categorias[3] });
+productosData.push({ID: 18, nombre: 'Jabra Elite 85t', precio: 3999, img: 'audifonos4', categoria: categorias[3] });
+productosData.push({ID: 19, nombre: 'Sennheiser Momentum True 2', precio: 4999, img: 'audifonos5', categoria: categorias[3] });
 
-productosData.push({ID: 20, nombre: 'Canon EOS R5', precio: 103999, img: camara1, categoria: categorias[4] });
-productosData.push({ID: 21, nombre: 'Sony Alpha A7 III', precio: 41999, img: camara2, categoria: categorias[4] });
-productosData.push({ID: 22, nombre: 'Nikon Z6 II ', precio: 41999, img: camara3, categoria: categorias[4] });
-productosData.push({ID: 23, nombre: 'Fujifilm X-T4', precio: 39999, img: camara4, categoria: categorias[4] });
-productosData.push({ID: 24, nombre: 'Panasonic Lumix', precio: 2999, img: camara5, categoria: categorias[4] });
+productosData.push({ID: 20, nombre: 'Canon EOS R5', precio: 103999, img: 'camara1', categoria: categorias[4] });
+productosData.push({ID: 21, nombre: 'Sony Alpha A7 III', precio: 41999, img: 'camara2', categoria: categorias[4] });
+productosData.push({ID: 22, nombre: 'Nikon Z6 II ', precio: 41999, img: 'camara3', categoria: categorias[4] });
+productosData.push({ID: 23, nombre: 'Fujifilm X-T4', precio: 39999, img: 'camara4', categoria: categorias[4] });
+productosData.push({ID: 24, nombre: 'Panasonic Lumix', precio: 2999, img: 'camara5', categoria: categorias[4] });
 
+const tableName = 'productos';
+const inserts = productosData.map(obj => {
+  obj.stock = 100;
+  obj.status = 1;
+  const columns = Object.keys(obj).join(', ');
+  const values = Object.values(obj).map(val => typeof val === 'string' ? `'${val}'` : val).join(', ');
+  return `INSERT INTO ${tableName} (${columns}) VALUES (${values});`;
+});
+
+console.log(inserts);
 
 export {productosData}
+
