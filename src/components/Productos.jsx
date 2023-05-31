@@ -54,6 +54,7 @@ const Productos = () => {
                                 <div>
                                     <p>{producto.nombre_producto}</p>
                                     <p>${producto.precio_producto}</p>
+                                    <p style={{ color: producto.stock_producto > 10 ? '#ACD982' : 'red' }}>Disponibles: {producto.stock_producto}</p>
                                 </div>
                                 <figure onClick={() => agregarCarrito(producto)}>
                                     <img src="./assets/icons/bt_add_to_cart.svg" alt="" />
