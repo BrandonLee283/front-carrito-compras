@@ -13,8 +13,7 @@ function App() {
           <Route path='/' element={<Productos categoria="" />} />
           <Route path='/productos/:categoria' element={<Productos/>} />
           <Route path='/correo' element={<Correo/>}/>
-
-
+          
           <Route path='/ordenes' element={<Ordenes/>}/>
 
           <Route path='*' element={<p>no encontrado</p>}/>

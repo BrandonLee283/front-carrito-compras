@@ -8,6 +8,7 @@ const Carrito = ({ selectedItems }) => {
         event.preventDefault();
         navigate('/ordenes', { state: { arrayData: selectedItems } });
     };
+    const extensiones = '.png' || '.jpg';
     return (
         <div>
             <aside className="product-detail desaparecer">
@@ -19,14 +20,14 @@ const Carrito = ({ selectedItems }) => {
                     {selectedItems.length === 0?(
                     <p>No hay articulos</p>):
                     (selectedItems.map(producto => {
-                        sumaTotal += (producto.precio * producto.cantidad)
+                        sumaTotal += (producto.precio_producto * producto.cantidad)
                         return (
-                            <div className="shopping-cart" key={producto.ID}>
+                            <div className="shopping-cart" key={producto.id_producto}>
                                 <figure>
-                                    <img src={producto.img} alt="Mando" className="product-img" />
+                                    <img src={`AssetsProducts/${producto.imagen_prodcuto+extensiones}`} alt="Mando" className="product-img" />
                                 </figure>
-                                <p>{producto.nombre}</p>
-                                <p>${producto.precio}</p>
+                                <p>{producto.nombre_producto}</p>
+                                <p>${producto.precio_producto}</p>
                                 <p>cantidad: {producto.cantidad}</p>
                                 <img src="assets/icons/icon_close.png" alt="close" />
                             </div>

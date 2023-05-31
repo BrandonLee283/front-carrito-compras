@@ -21,12 +21,12 @@ const Ordenes = () => {
                             (<p>Aun no tienes productos agregados</p>):
                             (
                                 arrayData.map(producto => (
-                                    <div className="order" key={producto.ID}>
+                                    <div className="order" key={producto.id_producto}>
                                         <p>
-                                            <span>{producto.nombre}</span>
+                                            <span>{producto.nombre_producto}</span>
                                             <span>{producto.cantidad}</span>
                                         </p>
-                                        <p>{(producto.precio*producto.cantidad)}</p>
+                                        <p>{(producto.precio_producto*producto.cantidad)}</p>
                                         <img src="assets/icons/flechita.svg" alt="arrow" />
                                     </div>
                                 )))

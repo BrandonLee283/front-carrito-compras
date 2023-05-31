@@ -8,6 +8,9 @@ import Carrito from "./Carrito";
 
 const Productos = () => {
 
+    const {categoria} = useParams();
+    const [showCart, setShowCart] = useState(false);
+    const [selectedItems, setSelectedItem] = useState([]);
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -17,17 +20,13 @@ const Productos = () => {
         .catch((error) => console.error('Error al obtener los usuarios:', error));
     }, []);
 
-    const { categoria } = useParams();
-    const [showCart, setShowCart] = useState(false);
-    const [selectedItems, setSelectedItem] = useState([]);
-
 
     const agregarCarrito = (producto) => {
-        const existingItem = selectedItems.find((item) => item.ID === producto.ID);
+        const existingItem = selectedItems.find((item) => item.id_producto === producto.id_producto);
         setShowCart(true);
         if (existingItem) {
             const updatedItems = selectedItems.map((item) => {
-                if (item.ID === producto.ID) {
+                if (item.id_producto === producto.id_producto) {
                     return { ...item, cantidad: item.cantidad + 1 };
                 }
                 return item;
@@ -38,18 +37,19 @@ const Productos = () => {
             setSelectedItem([...selectedItems, newItem]);
         }
     };
-    console.log(productos);
+
     const productosFiltrados = categoria
-        ? productos.filter((producto) => producto.categoria === categoria)
+        ? productos.filter(producto => producto.id_categoria === Number(categoria))
         : productos;
 
+    const extensiones = '.png' || '.jpg';
     return (
         <div>
             <section className="main-container">
                 <div className="cards-container">
                     {productosFiltrados.map((producto) => (
                         <div className="product-card" key={producto.id_producto}>
-                            <img src={`AssetsProducts/${producto.imagen_prodcuto}.png`} alt="" className="product-img" />
+                            <img src={`AssetsProducts/${producto.imagen_prodcuto+extensiones}`} alt="" className="product-img" />
                             <div className="product-info">
                                 <div>
                                     <p>{producto.nombre_producto}</p>

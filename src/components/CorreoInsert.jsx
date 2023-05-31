@@ -16,7 +16,7 @@ const CorreoInsert = () => {
           console.log(error.text);
       });
       e.target.reset() 
-  };s
+  };
 
   return (
     <>
@@ -30,7 +30,9 @@ const CorreoInsert = () => {
                     <input type="email" id="email" name='user_email' placeholder="nombre@example.com" class="form-control nput input-email" required/>
                     <input type="text" className='form-control' placeholder='subject' name='subject' required /><br />
                     <textarea name="message" cols="40" rows="5" required></textarea>
+                    <img src="./AssetsProducts/tv1.png" alt="television" name='television' />
                     <input type="submit" value="Enviar" class="primary-button login-button"/>
+                    
                 </form>
         </div>
     </div>  
