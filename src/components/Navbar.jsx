@@ -55,7 +55,7 @@ const Navbar = () => {
                     <li className="navbar-shopping-cart" onClick={toggleCart}>
 
                         <img src="assets/icons/icon_shopping_cart.svg" alt="shopping-cart" />
-                        <div className='NoProductos'>0</div>
+                        {/* <div className='NoProductos'>0</div> */}
 
                     </li>
                     {showCart ? <Carrito selectedItems={[]} /> : null}

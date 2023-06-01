@@ -16,7 +16,7 @@ body {
 }
 
 .product-detail {
-    width: 360px;
+    width: 400px;
     padding: 24px;
     box-sizing: border-box;
     position: absolute;
@@ -70,7 +70,7 @@ body {
 }
 .shopping-cart{
    display: grid;
-   grid-template-columns: auto 1fr auto auto;
+   grid-template-columns:auto auto auto auto auto;
    gap: 16px;
    margin-bottom: 24px;
    align-items: center;

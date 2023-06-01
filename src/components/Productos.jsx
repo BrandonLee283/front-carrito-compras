@@ -64,7 +64,7 @@ const Productos = () => {
                     ))}
                 </div>
             </section>
-            {showCart && <Carrito selectedItems={selectedItems} />}
+            {showCart && <Carrito selectedItems={selectedItems} setSelectedItem={setSelectedItem}/>}
         </div>
     );
 };
