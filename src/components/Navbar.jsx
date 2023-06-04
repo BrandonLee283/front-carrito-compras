@@ -5,7 +5,7 @@ import Carrito from "./Carrito";
 import MenuDesktop from "./Menudesktop";
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import { productosSelec } from './ProdcutosSelccionados';
 const Navbar = () => {
 
     const [categorias, setCategorias] = useState([]);
@@ -58,7 +58,7 @@ const Navbar = () => {
                         {/* <div className='NoProductos'>0</div> */}
 
                     </li>
-                    {showCart ? <Carrito selectedItems={[]} /> : null}
+                    {showCart ? <Carrito selectedItems={productosSelec} /> : null}
                 </ul>
             </div>
         </nav>

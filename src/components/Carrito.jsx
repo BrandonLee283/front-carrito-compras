@@ -1,6 +1,5 @@
 import '../styles/carrito.css';
 import { useNavigate } from 'react-router-dom';
-
 const Carrito = ({ selectedItems, setSelectedItem }) => {
     const navigate = useNavigate();
     var sumaTotal = 0
@@ -22,6 +21,7 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
         } else {
             const updatedItems = selectedItems.filter((item) => item.id_producto !== producto.id_producto);
             setSelectedItem(updatedItems);
+
         }
     }
     const extensiones = '.png' || '.jpg';

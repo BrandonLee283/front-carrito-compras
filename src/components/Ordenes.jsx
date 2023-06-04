@@ -8,9 +8,28 @@ const Ordenes = () => {
     const arrayData = location.state?.arrayData || [];
     var sumaTotal = 0
     const ingresarCorreo = () => {
+        arrayData.map(producto => {
+            const productoId = producto.id_producto; // ID del producto a actualizar
+            const cantidad = producto.cantidad; // Cantidad a restar del stock
+
+            fetch(`http://localhost:3001/productos/${productoId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cantidad: cantidad })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message); // Mensaje de respuesta del servidor
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        })
         navigate('/correo', { state: { arrayData: arrayData, total: sumaTotal } })
     }
-    
+
     return (
         <div>
             <div className='my-order'>
