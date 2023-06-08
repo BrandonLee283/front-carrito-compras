@@ -41,7 +41,7 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
     const extensiones = '.png' || '.jpg';
     return (
         <div>
-            <aside className="product-detail desaparecer">
+            <aside className="product-detail ">
                 <div className="title-container">
                     <img src="assets/icons/flechita.svg" alt="arrow" />
                     <p className="title">My Order</p>

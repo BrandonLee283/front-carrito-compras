@@ -1,3 +1,0 @@
-const productosSelec= [];
-
-export {productosSelec}

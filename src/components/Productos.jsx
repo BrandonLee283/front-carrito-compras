@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import '../styles/productos.css';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { productosSelec } from './ProdcutosSelccionados';
 import Carrito from "./Carrito";
 
 const Productos = () => {
@@ -35,7 +34,6 @@ const Productos = () => {
         } else {
             const newItem = { ...producto, cantidad: 1 };
             setSelectedItem([...selectedItems, newItem]);
-            productosSelec.push(producto)
         }
     };
 
