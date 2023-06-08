@@ -14,7 +14,7 @@ const CorreoInsert = () => {
 
   const form = useRef()
 
-  const enviado =()=>{
+  const enviado = () => {
     navigate('/enviado');
   }
 
@@ -29,6 +29,25 @@ const CorreoInsert = () => {
       });
     e.target.reset()
     enviado()
+    arrayData.forEach(producto => {
+      const productoId = producto.id_producto;
+      const cantidad = producto.cantidad;
+
+      fetch(`http://localhost:3001/productos/${productoId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ cantidad: cantidad })
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.message);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    })
   };
 
   return (
@@ -49,7 +68,7 @@ const CorreoInsert = () => {
               readOnly
               required />
             <input type="text" className='form-control' placeholder='subject' name='subject' value={`Total: $${Total}`} readOnly required /><br />
-            <input type="submit" value="Enviar" className="primary-button login-button"/>
+            <input type="submit" value="Enviar" className="primary-button login-button" />
           </form>
         </div>
       </div>

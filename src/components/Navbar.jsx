@@ -19,10 +19,7 @@ const Navbar = () => {
     const [showCart, setShowCart] = useState(false);
 
     const toggleCart = (e) => {
-        console.log(showCart);
-        let cambio = !showCart
-        setShowCart(cambio);
-        console.log(cambio);
+        setShowCart(!showCart);
     };
     return (
         <nav>
