@@ -3,8 +3,7 @@ import Navbar from "./components/Navbar";
 import Productos from "./components/Productos";
 import Ordenes from "./components/Ordenes";
 import Correo from './components/CorreoInsert'
-// import Carrito from './components/Carrito';
-// import EmailEnviado from "./components/EmailEnviado";
+// import Enviado from "./components/EmailEnviado";
 function App() {
   return (
     <>
@@ -16,7 +15,7 @@ function App() {
           <Route path='/correo' element={<Correo/>}/>
           
           <Route path='/ordenes' element={<Ordenes/>}/>
-          {/* <Route path='/car' element={<Carrito/>}/> */}
+          {/* <Route path='/enviado' element={<Enviado/>}/> */}
 
           <Route path='*' element={<p>no encontrado</p>}/>
           

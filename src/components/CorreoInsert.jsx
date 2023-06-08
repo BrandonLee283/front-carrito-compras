@@ -3,11 +3,14 @@ import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 // import Carrito from './Carrito';
 import '../styles/correoInsert.css'
+import { useNavigate } from 'react-router-dom';
+
 const CorreoInsert = () => {
 
   const location = useLocation();
   const arrayData = location.state?.arrayData || [];
   const Total = location.state?.total || 0;
+  const navigate = useNavigate();
 
 
   const form = useRef()
@@ -23,6 +26,11 @@ const CorreoInsert = () => {
       });
     e.target.reset()
   };
+  // const enviado =()=>{
+  //   navigate('/');
+  //   alert('Correo Enviado')
+
+  // }
   return (
     <>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossOrigin="anonymous"></link>

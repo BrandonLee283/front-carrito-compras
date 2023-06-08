@@ -9,8 +9,8 @@ const Ordenes = () => {
     var sumaTotal = 0
     const ingresarCorreo = () => {
         arrayData.map(producto => {
-            const productoId = producto.id_producto; // ID del producto a actualizar
-            const cantidad = producto.cantidad; // Cantidad a restar del stock
+            const productoId = producto.id_producto; 
+            const cantidad = producto.cantidad; 
 
             fetch(`http://localhost:3001/productos/${productoId}`, {
                 method: 'PUT',
@@ -21,7 +21,7 @@ const Ordenes = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data.message); // Mensaje de respuesta del servidor
+                    console.log(data.message); 
                 })
                 .catch(error => {
                     console.error('Error:', error);

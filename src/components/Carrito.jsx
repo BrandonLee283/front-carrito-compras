@@ -24,6 +24,20 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
 
         }
     }
+    const masmenosCantidad = (valor, producto) => {
+        if (valor < 0 || valor > producto.stock_producto) {
+          alert('No disponible');
+        } else {
+          const updatedItems = selectedItems.map((item) => {
+            if (item.id_producto === producto.id_producto) {
+              return { ...item, cantidad: parseInt(valor) };
+            }
+            return item;
+          });
+          setSelectedItem(updatedItems);
+        }
+      };
+      
     const extensiones = '.png' || '.jpg';
     return (
         <div>
@@ -46,7 +60,7 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
                                     </figure>
                                     <p>{producto.nombre_producto}</p>
                                     <p>${producto.precio_producto}</p>
-                                    <p>cantidad: {producto.cantidad}</p>
+                                    <input className='inputNumber' type="number" value={producto.cantidad} onChange={(e) => masmenosCantidad(e.target.value, producto)} />
                                 </div>
                             );
                         })

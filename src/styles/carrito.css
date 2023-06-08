@@ -91,7 +91,9 @@ body {
     font-size: var(--md);
     font-weight: bold;
 }
-
+.inputNumber{
+    width: 60%;
+}
 @media (max-width:640px) {
     .product-detail {
         width: 100%;

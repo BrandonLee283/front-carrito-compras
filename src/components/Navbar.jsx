@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/navbar.css'
 import { NavLink } from 'react-router-dom'
 import Carrito from "./Carrito";
-import MenuDesktop from "./Menudesktop";
+// import MenuDesktop from "./Menudesktop";
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { productosSelec } from './ProdcutosSelccionados';
@@ -18,17 +18,17 @@ const Navbar = () => {
     }, []);
 
     const [showCart, setShowCart] = useState(false);
-    const [showCuenta, setShowCuenta] = useState(false);
+    // const [showCuenta, setShowCuenta] = useState(false);
 
     const toggleCart = () => {
         setShowCart(!showCart);
-        setShowCuenta(false);
+        // setShowCuenta(false);
     };
 
-    const toggleCuenta = () => {
-        setShowCuenta(!showCuenta);
-        setShowCart(false);
-    };
+    // const toggleCuenta = () => {
+    //     setShowCuenta(!showCuenta);
+    //     setShowCart(false);
+    // };
 
 
     return (
@@ -50,8 +50,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-right">
                 <ul>
-                    <li className="navbar-email" onClick={toggleCuenta}>reyes@axample.com</li>
-                    {showCuenta ? <MenuDesktop /> : null}
+                    {/* <li className="navbar-email" onClick={toggleCuenta}>reyes@axample.com</li>
+                    {showCuenta ? <MenuDesktop /> : null} */}
                     <li className="navbar-shopping-cart" onClick={toggleCart}>
 
                         <img src="assets/icons/icon_shopping_cart.svg" alt="shopping-cart" />
