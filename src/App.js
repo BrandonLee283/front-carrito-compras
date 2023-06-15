@@ -4,6 +4,7 @@ import Productos from "./components/Productos";
 import Ordenes from "./components/Ordenes";
 import Correo from './components/CorreoInsert';
 import Enviado from "./components/EmailEnviado";
+import LoginComponent from './components/Login';
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path='/correo' element={<Correo/>}/>
           <Route path='/enviado' element={<Enviado/>}/>
           <Route path='/ordenes' element={<Ordenes/>}/>
+          <Route path='/login' element={<LoginComponent/>}/>
           
 
           <Route path='*' element={<p>no encontrado</p>}/>
