@@ -4,6 +4,7 @@ import '../styles/productos.css';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Carrito from "./Carrito";
+import Navbar from './Navbar';
 
 const Productos = () => {
 
@@ -44,6 +45,7 @@ const Productos = () => {
     const extensiones = '.png' || '.jpg';
     return (
         <div>
+            <Navbar></Navbar>
             <section className="main-container">
                 <div className="cards-container">
                     {productosFiltrados.map((producto) => {

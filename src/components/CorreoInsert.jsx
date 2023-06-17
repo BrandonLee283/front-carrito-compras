@@ -61,9 +61,9 @@ const CorreoInsert = () => {
         });
     })
   };
-  const mandarEstado =(e)=>{
-    setEstadosSelect(e.target.value);
-  }
+  // const mandarEstado =(e)=>{
+  //   setEstadosSelect(e.target.value);
+  // }
 
   return (
     <>
