@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
-// import Carrito from './Carrito';
 import '../styles/correoInsert.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -11,12 +10,25 @@ const CorreoInsert = () => {
   const arrayData = location.state?.arrayData || [];
   const Total = location.state?.total || 0;
   const navigate = useNavigate();
+  const [estados, setEstados] = useState([]);
 
   const form = useRef()
 
   const enviado = () => {
     navigate('/enviado');
   }
+  useEffect(() => {
+    fetch('http://localhost:3001/estados')
+      .then(response => response.json())
+      .then(data => {
+        setEstados(data)
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error al obtener las estados:', error);
+      });
+
+  }, [])
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -49,6 +61,9 @@ const CorreoInsert = () => {
         });
     })
   };
+  const mandarEstado =(e)=>{
+    setEstadosSelect(e.target.value);
+  }
 
   return (
     <>
@@ -60,6 +75,16 @@ const CorreoInsert = () => {
             <input type="text" className='form-control' placeholder='Nombre' name='user_name' required /><br />
             <input type="text" className='form-control' placeholder='Apellido Paterno' name='appellido' required /><br />
             <input type="email" id="email" name='user_email' placeholder="nombre@example.com" className="form-control nput input-email" required />
+            <select name="state" id="" >
+              <option >Seleccione un estado</option>
+              {estados.map((estado) => {
+                return(
+                  <option key={estado.id_estado} value={estado.nombre_estado}>{estado.nombre_estado}</option>
+                )
+              })}
+
+            </select>
+            
             <textarea
               name="message"
               cols="40"
@@ -67,7 +92,7 @@ const CorreoInsert = () => {
               value={arrayData.map((producto) => `${producto.cantidad} ${producto.nombre_producto} $${producto.precio_producto} c/u`).join("\n")}
               readOnly
               required />
-            <input type="text" className='form-control' placeholder='subject' name='subject' value={`Total: $${Total}`} readOnly required /><br />
+            <input type="text" className='form-control' placeholder='subject' name='subject' value={Total} readOnly required /><br />
             <input type="submit" value="Enviar" className="primary-button login-button" />
           </form>
         </div>
