@@ -50,7 +50,7 @@ const Productos = () => {
             <section className="main-container">
                 <div className="cards-container">
                     {productosFiltrados.map((producto) => {
-                        return producto.stock_producto > 0 ?(
+                        return producto.stock_producto > 0 && producto.status_producto === 1 ?(
                             <div className="product-card" key={producto.id_producto}>
                                 <img src={`AssetsProducts/${producto.imagen_prodcuto + extensiones}`} alt="" className="product-img" />
                                 <div className="product-info">

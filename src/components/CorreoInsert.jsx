@@ -6,6 +6,11 @@ import { useNavigate } from 'react-router-dom';
 
 const CorreoInsert = () => {
 
+  const [nombre, setNombre] = useState("");
+  const [apellido, setApellido] = useState("");
+  const [email, setEmail] = useState("");
+  const [estado, setEstado] = useState("");
+
   const location = useLocation();
   const arrayData = location.state?.arrayData || [];
   const Total = location.state?.total || 0;
@@ -32,38 +37,42 @@ const CorreoInsert = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (nombre === "" || apellido === "" || email === "" || estado === "") {
+      alert("Por favor, complete todos los campos requeridos.");
+      return false;
+    } else {
 
-    emailjs.sendForm('service_q19nlbe', 'template_ssrt9rw', form.current, 'qwcyT7lTmIsVr3VTP')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-    e.target.reset()
-    enviado()
-    arrayData.forEach(producto => {
-      const productoId = producto.id_producto;
-      const cantidad = producto.cantidad;
-
-      fetch(`http://localhost:3001/productos/${productoId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ cantidad: cantidad })
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.message);
-        })
-        .catch(error => {
-          console.error('Error:', error);
+      emailjs.sendForm('service_q19nlbe', 'template_ssrt9rw', form.current, 'qwcyT7lTmIsVr3VTP')
+        .then((result) => {
+          console.log(result.text);
+        }, (error) => {
+          console.log(error.text);
         });
-    })
+      e.target.reset()
+      enviado()
+      arrayData.forEach(producto => {
+        const productoId = producto.id_producto;
+        const cantidad = producto.cantidad;
+
+        fetch(`http://localhost:3001/productos/${productoId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ cantidad: cantidad })
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data.message);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      })
+    }
+
   };
-  // const mandarEstado =(e)=>{
-  //   setEstadosSelect(e.target.value);
-  // }
+
 
   return (
     <>
@@ -72,19 +81,19 @@ const CorreoInsert = () => {
         <div className="form-container">
           <img src="./assets/logos/logo_yard_sale.svg" alt="logo" className="logo" />
           <form ref={form} onSubmit={sendEmail}>
-            <input type="text" className='form-control' placeholder='Nombre' name='user_name' required /><br />
-            <input type="text" className='form-control' placeholder='Apellido Paterno' name='appellido' required /><br />
-            <input type="email" id="email" name='user_email' placeholder="nombre@example.com" className="form-control nput input-email" required />
-            <select name="state" id="" >
+            <input type="text" className='form-control' placeholder='Nombre' name='user_name' onChange={(e) => setNombre(e.target.value)} required /><br />
+            <input type="text" className='form-control' placeholder='Apellido Paterno' name='appellido' onChange={(e) => setApellido(e.target.value)} required /><br />
+            <input type="email" id="email" name='user_email' placeholder="nombre@example.com" className="form-control nput input-email" onChange={(e) => setEmail(e.target.value)} required />
+            <select name="state" className='Estados' onChange={(e) => setEstado(e.target.value)} required>
               <option >Seleccione un estado</option>
               {estados.map((estado) => {
-                return(
+                return (
                   <option key={estado.id_estado} value={estado.nombre_estado}>{estado.nombre_estado}</option>
                 )
               })}
 
             </select>
-            
+
             <textarea
               name="message"
               cols="40"
@@ -92,7 +101,7 @@ const CorreoInsert = () => {
               value={arrayData.map((producto) => `${producto.cantidad} ${producto.nombre_producto} $${producto.precio_producto} c/u`).join("\n")}
               readOnly
               required />
-            <input type="text" className='form-control' placeholder='subject' name='subject' value={Total} readOnly required /><br />
+            <input type="text" className='form-control' placeholder='subject' name='subject' value={`Total: $${Total}`} readOnly required /><br />
             <input type="submit" value="Enviar" className="primary-button login-button" />
           </form>
         </div>

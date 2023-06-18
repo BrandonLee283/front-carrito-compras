@@ -34,7 +34,6 @@ const AddCategorias = () => {
     return (
         <div className="container">
             <h1>Agregar Categorias</h1>
-            <form>
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">
                         Nombre
@@ -63,7 +62,6 @@ const AddCategorias = () => {
                 <button onClick={agregar} className="btn btn-primary">
                     Agregar
                 </button>
-            </form>
         </div>
     )
 }
