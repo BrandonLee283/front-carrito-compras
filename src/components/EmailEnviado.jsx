@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const EmailEnviado = () => {
     const navigate = useNavigate();
     const regresarRaiz=()=>{
-        navigate('/');
+        navigate('/productos')
       }
     return (
         <div>

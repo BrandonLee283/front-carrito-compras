@@ -28,9 +28,15 @@ const Navbar = () => {
                 <img src="assets/logos/logo_yard_sale.svg" alt="logo" className="logo" />
                 <ul>
                     <li><NavLink to={`/productos`}>Todo</NavLink></li>
-                    {categorias.map((categoria) => (
-                        <li key={categoria.id_categoria}><NavLink to={`/productos/${categoria.id_categoria}`}>{categoria.nombre_categoria}</NavLink></li>
-                    ))}
+                    {categorias.map((categoria) => {
+                        if (categoria.status_categoria) {
+                            return(                        
+                            <li key={categoria.id_categoria}><NavLink to={`/productos/${categoria.id_categoria}`}>{categoria.nombre_categoria}</NavLink></li>
+                            )
+                        }else{
+                            return null
+                        }
+                    })}
                 </ul>
             </div>
             <div className="navbar-right">
@@ -39,8 +45,8 @@ const Navbar = () => {
                         <img src="assets/icons/icon_shopping_cart.svg" alt="shopping-cart" style={{ marginRight: '2vw' }} />
 
                     </li>
-                    <li ><NavLink to={`/`}>                        
-                    <span className="material-symbols-outlined" style={{ marginRight: '2vw' }}>logout</span>
+                    <li ><NavLink to={`/`}>
+                        <span className="material-symbols-outlined" style={{ marginRight: '2vw' }}>logout</span>
                     </NavLink>
                     </li>
                     {showCart ? <Carrito selectedItems={[]} setSelectedItem={[]} /> : null}

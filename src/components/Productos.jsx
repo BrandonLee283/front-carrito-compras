@@ -22,6 +22,7 @@ const Productos = () => {
 
 
     const agregarCarrito = (producto) => {
+
         const existingItem = selectedItems.find((item) => item.id_producto === producto.id_producto);
         setShowCart(true);
         if (existingItem) {

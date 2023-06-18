@@ -27,13 +27,13 @@ function LoginComponent() {
       if (encontrado) {
         return;
       }
-      if (dato.user_cuenta === username && dato.password_cuenta) {
+      if (dato.user_cuenta === username && dato.password_cuenta === password) {
         console.log('Welcome');
         encontrado = true;
         if (dato.nombre_rol === 'Cliente') {
           navigate('/productos')
         }else{
-          navigate('/navbarAdmin')
+          navigate('/bienvenida')
         }
       } else {
         console.log('Contraseña y/o usuario incorrectos');
