@@ -7,7 +7,7 @@ const EditProducts = () => {
 
     const [nombreProducto, setNombre] = useState('');
     const [precioProducto, setPrecio] = useState('');
-    const [imagen, setImagen] = useState('');
+    // const [imagen, setImagen] = useState('');
     const [stockProducto, setDisponibles] = useState('');
     const [nombreCategoria, setCategoria] = useState('');
 
@@ -66,7 +66,7 @@ const EditProducts = () => {
     const almacenarDatos = (data) => {
         setNombre(data[0].nombre_producto || '');
         setPrecio(data[0].precio_producto || '');
-        setImagen(data[0].imagen_prodcuto || '');
+        // setImagen(data[0].imagen_prodcuto || '');
         setDisponibles(data[0].stock_producto || '');
         setCategoria(data[0].nombre_categoria || '');
         setDatosCargados(true);
