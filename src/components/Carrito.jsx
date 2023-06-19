@@ -38,7 +38,6 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
         }
       };
       
-    const extensiones = '.png' || '.jpg';
     return (
         <div>
             <aside className="product-detail ">
@@ -56,7 +55,7 @@ const Carrito = ({ selectedItems, setSelectedItem }) => {
                                     <img src="assets/icons/icon_close.png" alt="close" onClick={() => quitarProducto(producto)} />
 
                                     <figure>
-                                        <img src={`AssetsProducts/${producto.imagen_prodcuto + extensiones}`} alt="Mando" className="product-img" />
+                                        <img src={`http://localhost:3001/images/${producto.imagen_prodcuto}`} alt="Mando" className="product-img" />
                                     </figure>
                                     <p>{producto.nombre_producto}</p>
                                     <p>${producto.precio_producto}</p>

@@ -51,7 +51,7 @@ const ProductosAdmin = () => {
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Precio</th>
-                        {/* <th>Imagen</th> */}
+                        <th>Imagen</th>
                         <th>Disponibles</th>
                         <th>Categoria</th>
                         <th>Editar</th>
@@ -67,7 +67,7 @@ const ProductosAdmin = () => {
                                     <td>{producto.id_producto}</td>
                                     <td>{producto.nombre_producto}</td>
                                     <td>{producto.precio_producto}</td>
-                                    {/* <td><img src={`/AssetsProducts/${producto.imagen_prodcuto}.png`} alt={producto.imagen_prodcuto} /></td> */}
+                                    <td><img src={`http://localhost:3001/images/${producto.imagen_prodcuto}`} style={{width:'50px',height:'50px'}} alt={producto.imagen_prodcuto} /></td>
                                     <td>{producto.stock_producto}</td>
                                     <td>{producto.nombre_categoria}</td>
                                     <td><span className="material-symbols-outlined" onClick={() => editarProductos(producto.id_producto)}>edit</span></td>

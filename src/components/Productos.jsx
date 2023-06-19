@@ -43,7 +43,6 @@ const Productos = () => {
         ? productos.filter(producto => producto.id_categoria === Number(categoria))
         : productos;
 
-    const extensiones = '.png' || '.jpg';
     return (
         <div>
             <Navbar></Navbar>
@@ -52,7 +51,7 @@ const Productos = () => {
                     {productosFiltrados.map((producto) => {
                         return producto.stock_producto > 0 && producto.status_producto === 1 ?(
                             <div className="product-card" key={producto.id_producto}>
-                                <img src={`AssetsProducts/${producto.imagen_prodcuto + extensiones}`} alt="" className="product-img" />
+                                <img src={`http://localhost:3001/images/${producto.imagen_prodcuto}`} alt="" className="product-img" />
                                 <div className="product-info">
                                     <div>
                                         <p>{producto.nombre_producto}</p>
